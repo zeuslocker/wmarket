@@ -1,0 +1,20 @@
+!!!
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %title
+      = I18n.t('project_name')
+    = stylesheet_link_tag    'application', params[:controller], media: 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag 'application', params[:controller], 'data-turbolinks-track' => true
+    = csrf_meta_tags
+  %body
+  %nav{class: 'navbar fixed-top navbar-toggleable-sm navbar-inverse nav-header'}
+    %button.navbar-toggler.navbar-toggler-right{"aria-controls" => "nav-content", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-target" => "#nav-content", "data-toggle" => "collapse", :type => "button"}
+      %span.navbar-toggler-icon
+    = link_to image_tag('full-logo.png', class: 'logo_nav-medium'), root_path, class: 'navbar-brand'
+    .collapse.navbar-collapse#nav-content
+      %ul.navbar-nav
+        %li.nav-item
+          =link_to 'Theme 1', root_path, class: 'nav-link navbar__link_white'
+
+  = yield
