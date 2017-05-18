@@ -8,9 +8,12 @@ end
 gem 'trailblazer'
 gem 'trailblazer-rails'
 gem 'trailblazer-cells'
-gem 'cells-hamlit'
+gem 'cells-haml'
 gem 'cells-rails'
+gem "paperclip"
+gem 'file_validators'
 
+gem 'puma'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails'
 # Use postgresql as the database for Active Record
@@ -45,6 +48,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
+  gem 'pry'
 end
 
 group :development do

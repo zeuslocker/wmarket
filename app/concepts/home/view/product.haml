@@ -1,0 +1,12 @@
+.col-md-4.product__block-wrapper
+  .product_infowrapper
+    = image_tag(avatar.url, class: 'product__image_small')
+    .text-center
+      %b
+        = title
+    %p
+      = desc
+  .text-center
+    %b
+      = product_price
+  = button_tag I18n.t('buy'), class: 'btn btn-outline-success product__buy-btn_green-full'

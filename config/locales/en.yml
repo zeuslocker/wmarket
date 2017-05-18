@@ -23,3 +23,10 @@ en:
   hello: "Hello world"
   project_name: 'BitKotiki'
   buy: Купить
+  product:
+    create: 'Model created!'
+    create: 'Model updated!'
+    form:
+      submit: 'Create'
+    for_item: '1шт'
+    for_gram: '1грам'
