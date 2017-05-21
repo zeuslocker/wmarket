@@ -1,9 +1,9 @@
-var fadeStart=3 // 100px scroll or less will equiv to 0 opacity
-  ,fadeUntil=250 // 200px scroll or more will equiv to 0 opacity
+var fadeStart=10
+  ,fadeUntil=450
 ;
 $(window).bind('scroll', function(){
   fading = $('.nav-header')
-  var offset = $(document).scrollTop()
+  var offset = window.pageYOffset
       ,opacity=0
   ;
   if( offset<=fadeStart ){
@@ -13,4 +13,11 @@ $(window).bind('scroll', function(){
       opacity=offset/fadeUntil;
       fading.css('background-color', `rgba(41, 43, 44, ${opacity})`);
   }
+});
+
+$(function(){
+  fading = $('.nav-header')
+  var offset = window.pageYOffset;
+  var opacity=offset/fadeUntil;
+  fading.css('background-color', `rgba(41, 43, 44, ${opacity})`);
 });
