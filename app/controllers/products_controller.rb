@@ -24,4 +24,9 @@ class ProductsController < ApplicationController
     end
     render_view :edit
   end
+
+  def buy_form
+    run Product::BuyForm
+    render_view :buy_form
+  end
 end

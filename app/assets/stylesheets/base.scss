@@ -2,3 +2,9 @@
   height: 20px;
   width: 100%;
 }
+.form__placeholder{
+  @include placeholder{color: #cecece;};
+}
+.form__refresh_smal{
+  height: 15px;
+}

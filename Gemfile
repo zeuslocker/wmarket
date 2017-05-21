@@ -1,10 +1,12 @@
 source 'https://rubygems.org'
 
 gem 'bootstrap', '~> 4.0.0.alpha6'
+
 source 'https://rails-assets.org' do
   gem 'rails-assets-tether', '>= 1.3.3'
 end
 
+gem 'simple_captcha2', require: 'simple_captcha'
 gem 'trailblazer'
 gem 'trailblazer-rails'
 gem 'trailblazer-cells'
@@ -12,6 +14,13 @@ gem 'cells-haml'
 gem 'cells-rails'
 gem "paperclip"
 gem 'file_validators'
+
+gem 'toastr-rails'
+gem 'sprockets', '>=3.0.0.beta'
+gem 'sprockets-es6'
+
+gem 'sweet-alert', git: 'https://github.com/frank184/sweet-alert-rails'
+gem 'sweet-alert-confirm'
 
 gem 'puma'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'

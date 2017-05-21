@@ -1,0 +1,35 @@
+ru:
+  product:
+    amount: 'Введите количество'
+    gram: 'граммов'
+    for_item: '1шт'
+    for_gram: '1грам'
+    not_find: 'Продукт не найден!'
+  order:
+    success: 'Вам на почту были отправлены инструкции оплаты и получения товара'
+  form:
+    region:
+      label: 'Выберите район'
+      anyone: 'Любой район'
+      shechenkiv: 'Шевченковский'
+      lichakiv: 'Лычаковский'
+      livan: 'Железнодорожный (Левандовка)'
+      sihiv: 'Сыховский'
+      frankovy: 'Франковский (Наукова)'
+      galich: 'Галицкий (Центр)'
+    email:
+      label: 'Введите ваш емейл'
+      placeholder: 'example@mail.com'
+    buy: 'Купить'
+  captcha:
+    failure: 'Капча введена неверно!'
+    placeholder: 'Введите капчу'
+  buy: 'Купить'
+  one_ten: '1 - 10'
+  activemodel:
+    errors:
+      models:
+        reform:
+          attributes:
+            email:
+              invalid: 'введен неверно!'

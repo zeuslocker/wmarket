@@ -1,0 +1,7 @@
+.form-group
+  .simple_captcha_image= simple_captcha_my[:image]
+  .simple_captcha_field= simple_captcha_my[:field]
+  .simple_captcha_label= simple_captcha_my[:label]
+  .simple_captcha_refresh_button
+    = image_tag 'refresh.png', class: 'form__refresh_smal'
+    = simple_captcha_my[:refresh_button]

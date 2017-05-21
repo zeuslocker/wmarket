@@ -1,0 +1,15 @@
+.container.nav-margin
+  = form_tag(perform_order_path, method: :post) do
+    = hidden_field_tag :product_id, model.id, required: true
+    .form-group
+      = label_tag :product_amount, "#{I18n.t('product.amount')} #{I18n.t('product.gram')}:"
+      = number_field_tag :product_amount, nil, min: 1, max: 10, step: 1, required: true, placeholder: I18n.t('one_ten'), autoselect: true, class: 'form__placeholder form-control'
+    .form-group
+      = label_tag :region, I18n.t('form.region.label')
+      = city_region_tag
+    .form-group
+      = label_tag :email, I18n.t('form.email.label')
+      = email_field_tag :email, nil, required: true, placeholder: I18n.t('form.email.placeholder'), class: 'form__placeholder form-control'
+      = show_simple_captcha(placeholder: 'Введите капчу', label: :'', input_html: {class: 'form__placeholder form-control'})
+    .form-group
+      = submit_tag I18n.t('form.buy'), class: 'form-control btn btn-outline-success'

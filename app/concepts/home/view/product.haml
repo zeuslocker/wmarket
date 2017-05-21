@@ -9,4 +9,5 @@
   .text-center
     %b
       = product_price
-  = button_tag I18n.t('buy'), class: 'btn btn-outline-success product__buy-btn_green-full'
+  = link_to new_product_order_path(model.id) do
+    = button_tag I18n.t('buy'), class: 'btn btn-outline-success product__buy-btn_green-full'

@@ -1,14 +1,15 @@
 class AlertsViewHandler
-  attr_reader :result
+  attr_reader :result, :alerts
 
   class << self
-    def call(result)
-      new(result).perform
+    def call(result = {}, alerts: [])
+      new(result, alerts).perform
     end
   end
 
-  def initialize(result)
+  def initialize(result, alerts)
     @result = result
+    @alerts = alerts
   end
 
   def perform
@@ -16,8 +17,18 @@ class AlertsViewHandler
   end
 
   def setup_alerts!
-    result['contract.default'].errors.full_messages.inject('') do |acc, elem|
+    (step_errors | contract_errors | alerts).inject('') do |acc, elem|
       acc << elem + ' '
     end.chop
+  end
+
+  private
+
+  def contract_errors
+    result['contract.default']&.errors&.full_messages || []
+  end
+
+  def step_errors
+    result['step.errors'] || []
   end
 end
