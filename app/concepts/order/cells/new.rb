@@ -6,6 +6,8 @@ module Order::Cell
     include ::SimpleCaptcha::ViewHelper
     include ::TrailblazerHelpers::SimpleCaptcha
 
+    property :avatar, :title, :porthion_type
+
     def show
       render :form
     end

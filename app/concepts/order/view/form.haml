@@ -1,8 +1,11 @@
 .container.nav-margin
+  .row.justify-content-center.align-items-center
+    .col-auto
+      = image_tag avatar.url, class: 'product__image_medium'
   = form_for(model, url: product_orders_path, method: :post) do |f|
     = f.hidden_field :product_id
     .form-group
-      = f.label_tag :amount, "#{I18n.t('product.amount')} #{I18n.t('product.gram')}:"
+      = f.label_tag :amount, "#{I18n.t('product.amount')} (#{porthion_type}):"
       = f.number_field :amount, min: 1, max: 10, step: 1, required: true, placeholder: I18n.t('one_ten'), autoselect: true, class: 'form__placeholder form-control'
     .form-group
       = f.label_tag :region, I18n.t('form.region.label')
