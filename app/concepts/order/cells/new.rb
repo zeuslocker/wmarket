@@ -1,4 +1,4 @@
-require_relative '../../../trailblazer_helpers/simple_captcha.rb'
+require_relative '../../../trailblazer_helpers/simple_captcha'
 
 module Order::Cell
   class New < Trailblazer::Cell

@@ -23,6 +23,7 @@ module BitKotiki
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.time_zone = "Europe/Kiev"
     config.i18n.default_locale = :ru
+    config.autoload_paths  << "#{::Rails.root}/lib/api-v1-client-ruby/lib"
     config.generators do |g|
       g.orm :active_record, primary_key_type: :uuid
     end

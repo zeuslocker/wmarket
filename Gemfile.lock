@@ -54,6 +54,7 @@ GEM
       execjs (~> 2.0)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
+    blockchain (2.0.0)
     bootstrap (4.0.0.alpha6)
       autoprefixer-rails (>= 6.0.3)
       sass (>= 3.4.19)
@@ -246,6 +247,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  blockchain (~> 2.0)
   bootstrap (~> 4.0.0.alpha6)
   byebug
   cells-haml
