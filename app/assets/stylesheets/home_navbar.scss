@@ -1,11 +1,70 @@
 .nav-header{
-  height: 60px;
+  padding: 0;
 }
 .logo_nav-medium{
   position: relative;
-  top: -5px;
-  height: 35px;
+  top: 3px;
+  width: 200px;
+}
+@media screen and (max-width: 991px){
+  .navbar-nav-main{
+    width: 200px;
+    float: right;
+  }
 }
 .nav-margin{
   margin-top: 60px;
+  line-height: 60px;
+}
+@media screen and(min-width: 822px){
+  .navbar-brand-main{
+    width: 400px;
+    line-height: 60px;
+    height: 80px;
+    margin-left: 70px;
+  }
+}
+@media screen and(max-width: 1015px){
+  .navbar-brand-main{
+    width: 300px;
+    line-height: 60px;
+    height: 80px;
+    margin-left: 20px;
+  }
+}
+@media screen and(max-width: 920px){
+  .nav-item_main{
+    padding-right: 0px !important;
+  }
+}
+@media screen and (max-width: 767px){
+  .nav-item_main{
+    padding-left: 20px;
+  }
+}
+.nav-link_black{
+  color: black !important;
+}
+.nav-link_black:hover{
+  color: #00c3ad !important;
+}
+.home_items{
+  padding-left: 150px;
+  font-family: "OpenSans";
+}
+.home_items:hover{
+  padding-left: 150px;
+  font-family: "OpenSans";
+}
+.navbar-inverse, .navbar-inverse .navbar-toggler{
+  color: black !important;
+}
+.navbar-inverse .navbar-toggler {
+    vertical-align: middle;
+    border-color: black !important;
+    height: 40px;
+    margin-top: 20px;
+}
+.nav-item_main{
+  padding-right: 25px;
 }

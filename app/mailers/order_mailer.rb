@@ -3,6 +3,6 @@ class OrderMailer < ApplicationMailer
   # OrderMailer.pay_info_email(Order.last).deliver_now
   def pay_info_email(order)
     @model = order
-    mail(to: order.email, subject: 'Instructions')
+    mail(from: 'lapan40@yandex.ru', to: order.email, subject: 'Instructions')
   end
 end

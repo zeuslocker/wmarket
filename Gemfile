@@ -6,6 +6,7 @@ source 'https://rails-assets.org' do
   gem 'rails-assets-tether', '>= 1.3.3'
 end
 
+gem 'rename'
 gem 'blockchain', '~> 2.0'
 gem 'simple_captcha2', require: 'simple_captcha'
 gem 'trailblazer'

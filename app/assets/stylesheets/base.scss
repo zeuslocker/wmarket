@@ -9,7 +9,9 @@
   height: 15px;
 }
 .product__image_small{
-  width: 100%;
+  display: block;
+  margin: auto;
+  max-height: 250px;
 }
 .product__image_medium{
   max-height: 200px;
@@ -22,5 +24,13 @@
   width: 100%;
 }
 .product_infowrapper{
-  height: 370px;
+  height: 320px;
+}
+.product__block-link{
+  text-decoration: none;
+  color: black;
+}
+.product__block-link:hover{
+  text-decoration: none;
+  color: black;
 }

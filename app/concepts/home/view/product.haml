@@ -1,13 +1,10 @@
 .col-md-4.product__block-wrapper
-  .product_infowrapper
-    = image_tag(avatar.url, class: 'product__image_small')
+  = link_to new_product_order_path(model.id), class: 'product__block-link view overlay hm-blue-light' do
+    .product_infowrapper
+      = image_tag(avatar.url, class: 'product__image_small img-fluid')
+      .mask.flex-center
+        %b
+          = title
     .text-center
       %b
-        = title
-    %p
-      = desc
-  .text-center
-    %b
-      = product_price
-  = link_to new_product_order_path(model.id) do
-    = button_tag I18n.t('buy'), class: 'btn btn-outline-success product__buy-btn_green-full'
+        = product_price

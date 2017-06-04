@@ -9,6 +9,7 @@ class Order < ApplicationRecord
   after_create :send_order_mail
 
   def send_order_mail
+    binding.pry
     ::OrderMailer.pay_info_email(self).deliver_now
   end
 end
