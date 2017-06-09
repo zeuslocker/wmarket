@@ -7,10 +7,21 @@ $(function (){
 });
 
 function makePay(event){
-  if($('input[type=\'radio\']:checked').attr('id') === 'paymentType_QIWI' && $('.js-pay-email')[0].checkValidity()){
+  debugger;
+  if(!$('#pay_fields').hasClass('collapsing') || $('#pay_fields').hasClass('collapse')){
+    if($('input[type=\'radio\']:checked').attr('id') === 'paymentType_QIWI' && $('.js-pay-email')[0].checkValidity()){
+      event.preventDefault();
+      event.stopPropagation();
+      togglePayWindow();
+    }
+  }else{
     event.preventDefault();
     event.stopPropagation();
-    togglePayWindow();
+    setTimeout(function(){
+
+    }, 1) # FIXME
+    $('#pay_fields').removeClass('collapse');
+    $('#pay_fields').removeClass('collapsing');
   }
 }
 function togglePayWindow(event){

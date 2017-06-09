@@ -33,23 +33,24 @@
             .col.thumbslider__thumcontainer
               = image_tag('wt_lo.png', class: 'thumbslider__thumbitem')
       .col-sm-6.justify-content-center
-        .form-group
-          = email_field_tag(nil, nil, class: 'form-control js-pay-email', placeholder: 'Email', required: true)
-        .form-group
-          .row.justify-content-between
-            .col-lg
-              .payway
-                = radio_button_tag(:paymentType, :QIWI, false)
-                = label_tag(:paymentType_QIWI, image_tag('qiwi_wallet.png', class: 'payform_payicon_miner'))
-            .col-lg
-              .payway
-                = radio_button_tag(:paymentType, :PC, false)
-                = label_tag(:paymentType_PC, image_tag('YandexMoney.jpg', class: 'payform_payicon_miner'))
-            .col-lg
-              .payway
-                = radio_button_tag(:paymentType, :AC, true)
-                = label_tag(:paymentType_AC, image_tag('visa_mastercard_logo.png', class: 'payform_payicon'))
+        .collapse#pay_fields
+          .form-group
+            = email_field_tag(nil, nil, class: 'form-control js-pay-email', placeholder: 'Email', required: true)
+          .form-group
+            .row.justify-content-between
+              .col-lg
+                .payway
+                  = radio_button_tag(:paymentType, :QIWI, false)
+                  = label_tag(:paymentType_QIWI, image_tag('qiwi_wallet.png', class: 'payform_payicon_miner'))
+              .col-lg
+                .payway
+                  = radio_button_tag(:paymentType, :PC, false)
+                  = label_tag(:paymentType_PC, image_tag('YandexMoney.jpg', class: 'payform_payicon_miner'))
+              .col-lg
+                .payway
+                  = radio_button_tag(:paymentType, :AC, true)
+                  = label_tag(:paymentType_AC, image_tag('visa_mastercard_logo.png', class: 'payform_payicon'))
         .row.justify-content-center
           .col
             .form-group
-            = submit_tag(I18n.t('buy'), class: 'form-control btn btn-outline-primary js-buy-btn')
+            = submit_tag(I18n.t('buy'), class: 'form-control btn btn-outline-primary js-buy-btn', 'data-toggle': :collapse, 'data-target': '#pay_fields')
