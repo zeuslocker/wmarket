@@ -1,10 +1,14 @@
 .col-md-4.product__block-wrapper
-  = link_to new_product_order_path(model.id), class: 'product__block-link view overlay hm-blue-light' do
-    .product_infowrapper
-      = image_tag(avatar.url, class: 'product__image_small img-fluid')
-      .mask.flex-center
-        %b
-          = title
-    .text-center
-      %b
-        = product_price
+  .ih-item.square.colored.effect6.bottom_to_top.product__hoveraminate_medium
+    = link_to new_product_order_path(model.id) do
+      .img
+        = image_tag(avatar.url, class: 'product__image_small')
+      .info.without_fon
+        %h3
+          Смотреть описание
+  .text-center
+    %b
+      = title
+
+  %h3.text-center
+    = product_price

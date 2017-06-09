@@ -6,6 +6,8 @@ source 'https://rails-assets.org' do
   gem 'rails-assets-tether', '>= 1.3.3'
 end
 
+gem 'bxslider-rails'
+gem "ihover-rails"
 gem 'rename'
 gem 'blockchain', '~> 2.0'
 gem 'simple_captcha2', require: 'simple_captcha'

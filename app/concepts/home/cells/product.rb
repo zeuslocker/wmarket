@@ -9,7 +9,7 @@ module Home::Cell
     end
 
     def product_price
-      raw("1#{model.porthion_type} - #{price}$")
+      raw("#{price} руб")
     end
   end
 end

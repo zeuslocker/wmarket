@@ -1,7 +1,7 @@
 var fadeStart=10
   ,fadeUntil=450
 ;
-$(window).bind('scrolls', function(){
+$(window).bind('', function(){
   fading = $('.nav-header')
   var offset = window.pageYOffset
       ,opacity=0

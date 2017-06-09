@@ -6,10 +6,14 @@ module Order::Cell
     include ::SimpleCaptcha::ViewHelper
     include ::TrailblazerHelpers::SimpleCaptcha
 
-    property :avatar, :title, :porthion_type
+    property :avatar, :title, :price
 
     def show
       render :form
+    end
+
+    def pay_title
+      title[0, 18] + '...'
     end
 
     def city_region_tag(f)

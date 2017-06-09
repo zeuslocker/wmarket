@@ -7,7 +7,13 @@ module Product::Contract
 
     property :avatar
 
-     validates :avatar, file_size: {less_than: 10.megabytes},
+     validates :avatar, file_size: { less_than: 10.megabytes },
        file_content_type: {allow: ['image/jpeg', 'image/png', 'image/gif']}
+    collection :attachments do
+      ::Attachment.attribute_names.each{|col| property col.to_sym }
+      property :value
+      validates :value, file_size: { less_than: 10.megabytes },
+      file_content_type: {allow: ['image/jpeg', 'image/png', 'image/gif']}
+    end
   end
 end

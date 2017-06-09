@@ -1,18 +1,55 @@
+.pay-backwrap.hidden-xs-up
+.paywindow.hidden-xs-up
+  .row
+  .col
+    %p
+      = I18n.t('pay.qiwi')
+  .row
+    .col
+      %p
+        = I18n.t() #FIXME
+  = button_tag(class: 'close closebtn js-closepay-btn', :'aria-label' => 'Close') do
+    %span{:'aria-hidden' => 'true'} &times;
 .container.nav-margin
-  .row.justify-content-center.align-items-center
-    .col-auto
-      = image_tag avatar.url, class: 'product__image_medium'
-  = form_for(model, url: product_orders_path, method: :post) do |f|
-    = f.hidden_field :product_id
-    .form-group
-      = f.label_tag :amount, "#{I18n.t('product.amount')} (#{porthion_type}):"
-      = f.number_field :amount, min: 1, max: 10, step: 1, required: true, placeholder: I18n.t('one_ten'), autoselect: true, class: 'form__placeholder form-control'
-    .form-group
-      = f.label_tag :region, I18n.t('form.region.label')
-      = city_region_tag(f)
-    .form-group
-      = f.label_tag :email, I18n.t('form.email.label')
-      = f.email_field :email, required: true, placeholder: I18n.t('form.email.placeholder'), class: 'form__placeholder form-control'
-      = show_simple_captcha(placeholder: 'Введите капчу', label: :'', input_html: {class: 'form__placeholder form-control'})
-    .form-group
-      = f.submit_tag I18n.t('form.buy'), class: 'form-control btn btn-outline-success'
+  = form_tag('https://money.yandex.ru/quickpay/confirm.xml', method: :POST) do
+    = hidden_field_tag(:receiver, YANDEX_WALLET)
+    = hidden_field_tag(:formcomment, pay_title)
+    = hidden_field_tag(:'short-dest', pay_title)
+    = hidden_field_tag(:'quickpay-form', :shop)
+    = hidden_field_tag(:targets, :wot)
+    = hidden_field_tag(:sum, price)
+    .row
+      .col-6
+        .thumbslider__wrapper
+          .thumbslider__mainimgwrapper
+            = image_tag('wt_lo.png', class: 'thumbslider__mainslide')
+          .thumbslider__thhumbs.row.justify-content-between
+            .col.thumbslider__thumcontainer
+              = image_tag('aebek6.jpg', class: 'thumbslider__thumbitem')
+            .col.thumbslider__thumcontainer
+              = image_tag('steam_02.png', class: 'thumbslider__thumbitem')
+            .col.thumbslider__thumcontainer
+              = image_tag('warthunder_logo.png', class: 'thumbslider__thumbitem')
+            .col.thumbslider__thumcontainer
+              = image_tag('wt_lo.png', class: 'thumbslider__thumbitem')
+      .col-sm-6.justify-content-center
+        .form-group
+          = email_field_tag(nil, nil, class: 'form-control js-pay-email', placeholder: 'Email', required: true)
+        .form-group
+          .row.justify-content-between
+            .col-lg
+              .payway
+                = radio_button_tag(:paymentType, :QIWI, false)
+                = label_tag(:paymentType_QIWI, image_tag('qiwi_wallet.png', class: 'payform_payicon_miner'))
+            .col-lg
+              .payway
+                = radio_button_tag(:paymentType, :PC, false)
+                = label_tag(:paymentType_PC, image_tag('YandexMoney.jpg', class: 'payform_payicon_miner'))
+            .col-lg
+              .payway
+                = radio_button_tag(:paymentType, :AC, true)
+                = label_tag(:paymentType_AC, image_tag('visa_mastercard_logo.png', class: 'payform_payicon'))
+        .row.justify-content-center
+          .col
+            .form-group
+            = submit_tag(I18n.t('buy'), class: 'form-control btn btn-outline-primary js-buy-btn')
