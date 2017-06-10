@@ -10,12 +10,12 @@ class ProductsController < ApplicationController
 
   def new
     run Product::New
-    render_view :new
+    render_view :new, options: {contract: result['contract.default']}
   end
 
   def edit
     run Product::Edit
-    render_view :edit
+    render_view :edit, options: {contract: result['contract.default']}
   end
 
   def update

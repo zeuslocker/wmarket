@@ -4,4 +4,9 @@ class Product::Edit < Trailblazer::Operation
 
   step Model(::Product, :find)
   step ::Trailblazer::Operation::Contract::Build()
+  step :contract_prepopulate
+
+  def contract_prepopulate(options, **)
+    options['contract.default'].prepopulate!({})
+  end
 end

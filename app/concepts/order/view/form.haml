@@ -1,13 +1,38 @@
 .pay-backwrap.hidden-xs-up
 .paywindow.hidden-xs-up
   .row
-  .col
-    %p
-      = I18n.t('pay.qiwi')
+    .col
+      %p
+        = I18n.t('pay.qiwi')
   .row
     .col
       %p
-        = I18n.t() #FIXME
+        = I18n.t('pay.sum') + ':'
+    .col
+      %p
+        = price
+  .row
+    .col
+      %p
+        = I18n.t('pay.wallet') + ':'
+    .col
+      %p
+        = YANDEX_WALLET
+  .row
+    .col
+      %p
+        = I18n.t('pay.label') + ':'
+    .col
+      %p
+        = qiwi_label
+  .row
+    .col
+      %p
+        Отправьте платеж за указанными реквизитами, обязательно вставьте указанное примичание к платежу. Посте чего нажмите кнопку 'Я оплатил'. Если данные были указанны верно то вам на почту прийдет письмо данными от аккаунта.
+  .row
+    .col
+      = button_tag(class: 'btn btn-outline-primary js-qiwi-pay') do
+        Я оплатил
   = button_tag(class: 'close closebtn js-closepay-btn', :'aria-label' => 'Close') do
     %span{:'aria-hidden' => 'true'} &times;
 .container.nav-margin
@@ -19,20 +44,40 @@
     = hidden_field_tag(:targets, :wot)
     = hidden_field_tag(:sum, price)
     .row
-      .col-6
+      .col-sm-6
         .thumbslider__wrapper
           .thumbslider__mainimgwrapper
-            = image_tag('wt_lo.png', class: 'thumbslider__mainslide')
-          .thumbslider__thhumbs.row.justify-content-between
-            .col.thumbslider__thumcontainer
-              = image_tag('aebek6.jpg', class: 'thumbslider__thumbitem')
-            .col.thumbslider__thumcontainer
-              = image_tag('steam_02.png', class: 'thumbslider__thumbitem')
-            .col.thumbslider__thumcontainer
-              = image_tag('warthunder_logo.png', class: 'thumbslider__thumbitem')
-            .col.thumbslider__thumcontainer
-              = image_tag('wt_lo.png', class: 'thumbslider__thumbitem')
+            .ih-item.square.effect6.bottom_to_top
+              .img
+                = image_tag(main_image.url, class: 'thumbslider__mainslide')
+              .info
+                %h3
+                  Увеличить
+                %p
+                  Description goes here
+          .thumbslider__thhumbs.row.justify-content-center
+            - product_images.each do |image|
+              .col-3.thumbslider__thumcontainer
+                = image_tag(image.url, class: 'thumbslider__thumbitem')
       .col-sm-6.justify-content-center
+        %h3.text-center
+          Основная техника в ангаре
+        %h4
+          = title
+        %br
+        .row
+          .col
+            %h1
+              = price.to_s
+              %span.product__currency
+                = I18n.t('pay.rub')
+        .row
+          .col
+            %h5
+              = I18n.t('pay.product_code') + ':'
+          .col
+            %h5
+              = product_code
         .collapse#pay_fields
           .form-group
             = email_field_tag(nil, nil, class: 'form-control js-pay-email', placeholder: 'Email', required: true)
@@ -54,3 +99,14 @@
           .col
             .form-group
             = submit_tag(I18n.t('buy'), class: 'form-control btn btn-outline-primary js-buy-btn', 'data-toggle': :collapse, 'data-target': '#pay_fields')
+
+.row
+  .col-sm-6
+    .ih-item.square.effect6.bottom_to_top
+      .img
+        = image_tag(main_image.url, class: 'thumbslider__mainslide')
+      .info
+        %h3
+          Увеличить
+        %p
+          Description goes here

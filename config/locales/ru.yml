@@ -43,3 +43,9 @@ ru:
     x6x: 'Шевченковский'
   pay:
     qiwi: 'Оплата заказа QIWI'
+    sum: 'Сумма'
+    wallet: 'Кошелек QIWI'
+    label: 'Примечание'
+    price: 'Цена'
+    rub: 'руб'
+    product_code: 'Код товара'

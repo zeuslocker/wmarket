@@ -7,21 +7,18 @@ $(function (){
 });
 
 function makePay(event){
-  debugger;
-  if(!$('#pay_fields').hasClass('collapsing') || $('#pay_fields').hasClass('collapse')){
+  if($('#pay_fields').length > 0){
+    event.preventDefault();
+    event.stopPropagation();
+    $('#pay_fields').removeAttr('id');
+    $('.js-buy-btn').removeAttr('data-toggle');
+    $('.js-buy-btn').removeAttr('data-target');
+  }else{
     if($('input[type=\'radio\']:checked').attr('id') === 'paymentType_QIWI' && $('.js-pay-email')[0].checkValidity()){
       event.preventDefault();
       event.stopPropagation();
       togglePayWindow();
     }
-  }else{
-    event.preventDefault();
-    event.stopPropagation();
-    setTimeout(function(){
-
-    }, 1) # FIXME
-    $('#pay_fields').removeClass('collapse');
-    $('#pay_fields').removeClass('collapsing');
   }
 }
 function togglePayWindow(event){

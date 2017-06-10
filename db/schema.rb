@@ -18,8 +18,8 @@ ActiveRecord::Schema.define(version: 20170604103504) do
   enable_extension "pgcrypto"
 
   create_table "attachments", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
-    t.string "attachmentble_type", null: false
-    t.uuid "attachmentble_id", null: false
+    t.string "attachmentable_type"
+    t.uuid "attachmentable_id"
     t.string "value_file_name"
     t.string "value_content_type"
     t.integer "value_file_size"

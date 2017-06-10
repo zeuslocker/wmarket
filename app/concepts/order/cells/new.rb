@@ -1,3 +1,4 @@
+require 'securerandom'
 require_relative '../../../trailblazer_helpers/simple_captcha'
 
 module Order::Cell
@@ -10,6 +11,22 @@ module Order::Cell
 
     def show
       render :form
+    end
+
+    def main_image
+      model.product.attachments.first.value
+    end
+
+    def product_images
+      @product_images ||= model.product.attachments.map(&:value)
+    end
+
+    def qiwi_label
+      SecureRandom.hex(6)
+    end
+
+    def product_code
+      params[:product_id][0, 8].tr('-', '')
     end
 
     def pay_title

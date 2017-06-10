@@ -23,6 +23,7 @@
   margin-bottom: 10px;
 }
 .product__hoveraminate_medium{
+  max-width: 100%;
   height: auto !important;
   border: none !important;
   -webkit-box-shadow: none !important;
@@ -86,7 +87,8 @@
   overflow: auto;
 }
 .paywindow{
-  width: 400px;
+  width: 800px;
+  max-width: 90vw;
   height: 400px;
   margin: 50px auto;
   background: #fff;
