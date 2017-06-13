@@ -95,6 +95,7 @@ GEM
       declarative-option (< 0.2.0)
       representable (>= 2.4.0, <= 3.1.0)
       uber (< 0.2.0)
+    elevatezoom-rails (1.0.0)
     erubi (1.6.0)
     execjs (2.7.0)
     file_validators (2.1.0)
@@ -260,6 +261,7 @@ DEPENDENCIES
   cells-haml
   cells-rails
   coffee-rails
+  elevatezoom-rails
   file_validators
   ihover-rails
   jbuilder (~> 2.0)

@@ -6,10 +6,10 @@ module Order::Cell
     include ::ActionView::Helpers::FormOptionsHelper
     include ::SimpleCaptcha::ViewHelper
     include ::TrailblazerHelpers::SimpleCaptcha
-
-    property :avatar, :title, :price
+    property :avatar, :title, :price, :category, :desc
 
     def show
+      return render :wot_form if(category.name == 'World of Tanks')
       render :form
     end
 
@@ -26,7 +26,7 @@ module Order::Cell
     end
 
     def product_code
-      params[:product_id][0, 8].tr('-', '')
+      params[:product_id][0, 8].tr('-', '').upcase
     end
 
     def pay_title

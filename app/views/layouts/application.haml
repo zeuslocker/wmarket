@@ -16,8 +16,11 @@
       %ul.navbar-nav
         %li.nav-item.nav-item_main
           =link_to 'ГЛАВНАЯ', root_path, class: 'nav-link nav-link_black'
-        %li.nav-item.nav-item_main
-          =link_to 'КАТЕГОРИИ', root_path, class: 'nav-link nav-link_black'
+        %li.nav-item.dropdown.nav-item_main
+          =link_to 'КАТЕГОРИИ', nil, class: 'nav-link dropdown-toggle nav-link_black', id: 'navbarDropdownMenuLink', 'data-toggle': :dropdown, 'aria-haspopup': :true, 'aria-expanded': :false
+          .dropdown-menu{'aria-labelledby': 'navbarDropdownMenuLink'}
+            - (Category.all).each do |category|
+              = link_to(category.name, products_category_path(id: category.id), class: 'dropdown-item')
         %li.nav-item.nav-item_main
           =link_to 'ГАРАНТИИ', root_path, class: 'nav-link nav-link_black'
         %li.nav-item.nav-item_main

@@ -1,12 +1,5 @@
-class Product::Edit < Trailblazer::Operation
-  extend ::Trailblazer::Operation::Contract::DSL
-  contract Product::Contract::ProductForm
+require_relative 'new'
 
-  step Model(::Product, :find)
-  step ::Trailblazer::Operation::Contract::Build()
-  step :contract_prepopulate
-
-  def contract_prepopulate(options, **)
-    options['contract.default'].prepopulate!({})
-  end
+class Product::Edit < Product::New
+  step Model(::Product, :find), replace: :setup_model
 end

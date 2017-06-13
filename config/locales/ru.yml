@@ -49,3 +49,5 @@ ru:
     price: 'Цена'
     rub: 'руб'
     product_code: 'Код товара'
+  categories:
+    title: 'КАТЕГОРИИ'

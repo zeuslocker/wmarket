@@ -1,9 +1,12 @@
+//= require jquery.elevateZoom-3.0.8.min
+
 $( document ).on('click', '.js-buy-btn', makePay);
 
 $( document ).on('click', '.pay-backwrap, .js-closepay-btn', togglePayWindow);
 
 $(function (){
   $('label[for=\'paymentType_AC\']').closest('.payway').css({'border-color': '#0275d8', 'box-shadow': '0 0 10px #0275d8'});
+  $('#zoom_01').elevateZoom({zoomType: 'lens', lensShape: 'square', lensSize: 200});
 });
 
 function makePay(event){
