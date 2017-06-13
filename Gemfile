@@ -6,6 +6,9 @@ source 'https://rails-assets.org' do
   gem 'rails-assets-tether', '>= 1.3.3'
 end
 
+gem 'devise', github: 'plataformatec/devise'
+gem 'erubis'
+gem 'elevatezoom-rails'
 gem 'bxslider-rails'
 gem "ihover-rails"
 gem 'rename'
@@ -18,7 +21,7 @@ gem 'cells-haml'
 gem 'cells-rails'
 gem "paperclip"
 gem 'file_validators'
-
+gem "figaro"
 gem 'toastr-rails'
 gem 'sprockets', '>=3.0.0.beta'
 gem 'sprockets-es6'
@@ -66,7 +69,11 @@ end
 
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> in views
+  gem 'capistrano',         require: false
+  gem 'capistrano-rbenv',   require: false
+  gem 'capistrano-rails',   require: false
+  gem 'capistrano-bundler', require: false
+  gem 'capistrano3-puma',   require: false
   gem 'web-console', '~> 2.0'
-
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
 end

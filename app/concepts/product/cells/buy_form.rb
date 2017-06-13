@@ -1,7 +1,6 @@
 module Product::Cell
   class BuyForm < Trailblazer::Cell
     include ::ActionView::Helpers::FormOptionsHelper
-    include ::SimpleCaptcha::ViewHelper
 
     def show_simple_captcha(options={})
       key = simple_captcha_key(options[:object])

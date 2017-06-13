@@ -5,7 +5,7 @@ module Product::Contract
     validates :title, presence: true
     validates :desc, presence: true
     validates :price, numericality: {greater_than_or_equal_to: 0}
-
+    validates :category_id, presence: true
     property :avatar
 
      validates :avatar, file_size: { less_than: 10.megabytes },

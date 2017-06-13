@@ -2,6 +2,9 @@
   position: relative;
   min-height: 90vh;
 }
+* {
+  max-width: 100%;
+}
 .main-slider_fraktal {
   background-image: image-url("steam_02.png"), image-url('wt_lo.png'), image-url("world-of-tanks-2.png"), image-url('steam-random-2.jpg');
   background-position: 5% 15%, 95% 18%, center, center;
@@ -10,11 +13,17 @@
   background-color: white;
   background-attachment: fixed;
 }
+@media screen and (min-width: 767px) and (max-width: 1185){
+  .navbar-collapse {
+    min-width: 777px;
+    max-width: 100%;
+  }
+}
 @media screen and (max-width: 767px){
   .main-slider_fraktal {
-    background-image: image-url("steam_02.png"), image-url('wt_lo.png'), image-url("world-of-tanks-2.png");
+    background-image: image-url("steam_02.png"), image-url('wt_lo.png'), image-url("world-of-tanks-2.png"), image-url('steam-random-2.jpg');
     background-position: 5% 18%, 95% 22%, center;
-    background-size: 40% auto, 35% auto, 70% auto;
+    background-size: 40% auto, 35% auto, 70% auto, 100% 100%;
     background-repeat: no-repeat;
     background-color: white;
     background-attachment: fixed;
@@ -37,4 +46,9 @@
   width: 80vw;
   margin: 0 auto;
   display: block;
+}
+.contacts__icon{
+  height: 70px;
+  display:block;
+  margin: auto;
 }

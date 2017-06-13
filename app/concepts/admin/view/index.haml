@@ -1,0 +1,28 @@
+.row
+  .col-sm-3
+    = link_to new_product_path do
+      = button_tag('New Product', class: 'btn btn-primary')
+  .col-sm-3
+    = link_to destroy_admin_session_path, method: :DELETE do
+      = button_tag('Log Out', class: 'btn btn-primary')
+%table.table
+  %thead
+    %tr
+      %th id
+      %th category
+      %th title
+      %th edit
+      %th delete
+  %tbody
+    - model.each do |product|
+      %tr
+        %th
+          = product.id
+        %td
+          = product.category.name
+        %td
+          = product.title
+        %td
+          = link_to('Edit', edit_product_path(product.id))
+        %td
+          = link_to('delete', product_path(product.id), method: :DELETE)

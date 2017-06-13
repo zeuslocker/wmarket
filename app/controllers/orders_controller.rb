@@ -1,5 +1,4 @@
 class OrdersController < ApplicationController
-  include SimpleCaptcha::ControllerHelpers
   cell_path 'order'
 
   def new

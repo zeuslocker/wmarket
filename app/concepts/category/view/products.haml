@@ -1,0 +1,17 @@
+.container-fluid
+  .row
+    .col-sm-3
+      %h3.text-center
+        = I18n.t('categories.title')
+      %ul.nav.flex-column.verticalnav_wrapper
+        - Category.all.each do |category|
+          %li.nav-item.verticalnav_standart
+            = link_to(products_category_path(id: category.id), class: "nav-link #{active(category)}") do
+              = category.name
+              = "(#{category.products.count})"
+    .col-9
+      - model.each_with_index do |product, index|
+        = open_row(index)
+        = concept('home/cell/product', product)
+        = close_row(index)
+.footer_standart

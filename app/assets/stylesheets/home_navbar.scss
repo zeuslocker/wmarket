@@ -26,13 +26,23 @@
 }
 @media screen and(max-width: 1015px){
   .navbar-brand-main{
+    max-width: 100%;
     width: 300px;
     line-height: 60px;
     height: 80px;
     margin-left: 20px;
   }
 }
-@media screen and(max-width: 920px){
+@media screen and(max-width: 525px){
+  .navbar-brand-main{
+    max-width: 100%;
+    width: 200px;
+    line-height: 60px;
+    height: 80px;
+    margin-left: 20px;
+  }
+}
+@media screen and(max-width: 1120px){
   .nav-item_main{
     padding-right: 0px !important;
   }

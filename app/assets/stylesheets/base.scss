@@ -54,21 +54,20 @@
   max-height: 51px;
 }
 .payway {
-    min-width: 160px;
+    min-width: 130px;
     border: 1px solid #b7b7b7;
     border-radius: 8px;
     padding: 5px;
     padding-bottom: 10px;
     height: 60px;
     line-height: 45px;
+    display: inline-block;
+    width: 100%;
     margin-bottom: 15px;
     text-align: center;
 }
-.payway label img{
-  margin-left: 10px;
-}
 .payway label {
-  width: 100%;
+  width: 118px;
   height: 100%;
 }
 .payway input[type='radio'] {
@@ -89,7 +88,6 @@
 .paywindow{
   width: 800px;
   max-width: 90vw;
-  height: 400px;
   margin: 50px auto;
   background: #fff;
   z-index: 200;
@@ -100,10 +98,43 @@
   bottom: 0;
   padding: 16px;
 }
-
+.zoomContainer {
+  max-width: 100% !important;
+}
+@media screen and (min-width: 820px) {
+  .paywindow{
+    width: 800px;
+    max-width: 90vw;
+    margin: 50px auto;
+    background: #fff;
+    z-index: 200;
+    position: fixed;
+    height: 320px;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    padding: 16px;
+  }
+}
 .closebtn{
   cursor: pointer;
   position: absolute;
   right: 15px;
   top: 15px
+}
+.verticalnav_standart .nav-link{
+  color: black;
+
+  border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+}
+.verticalnav_standart .active{
+  color: #0275d8;
+  background-color: aliceblue;
+}
+.verticalnav_wrapper {
+
+}
+.dropdown-menu {
+  top: 93% !important;
 }

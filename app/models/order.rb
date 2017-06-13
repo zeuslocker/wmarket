@@ -1,5 +1,5 @@
 class Order < ApplicationRecord
-  delegate :avatar, :title, :price, to: :product
+  delegate :avatar, :title, :price, :category, :desc, to: :product
   belongs_to :product
 
   after_create :send_order_mail

@@ -8,7 +8,7 @@
     = javascript_include_tag 'application', params[:controller], media: 'all'
     = csrf_meta_tags
   %body
-  %nav{class: 'navbar navbar-toggleable-sm navbar-inverse nav-header navbar-light bg-faded'}
+  %nav{class: 'navbar navbar-toggleable-md navbar-inverse nav-header navbar-light bg-faded'}
     %button.navbar-toggler.navbar-toggler-right{"aria-controls" => "nav-content", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-target" => "#nav-content", "data-toggle" => "collapse", :type => "button"}
       ☰
     = link_to image_tag('wotlogo.png', class: 'logo_nav-medium'), root_path, class: 'navbar-brand-main navbar-brand'
@@ -16,14 +16,19 @@
       %ul.navbar-nav
         %li.nav-item.nav-item_main
           =link_to 'ГЛАВНАЯ', root_path, class: 'nav-link nav-link_black'
+        %li.nav-item.dropdown.nav-item_main
+          =link_to 'КАТЕГОРИИ', nil, class: 'nav-link dropdown-toggle nav-link_black', id: 'navbarDropdownMenuLink', 'data-toggle': :dropdown, 'aria-haspopup': :true, 'aria-expanded': :false
+          .dropdown-menu{'aria-labelledby': 'navbarDropdownMenuLink'}
+            - (Category.all).each do |category|
+              = link_to(category.name, products_category_path(id: category.id), class: 'dropdown-item')
         %li.nav-item.nav-item_main
-          =link_to 'КАТЕГОРИИ', root_path, class: 'nav-link nav-link_black'
+          =link_to 'ГАРАНТИИ', garanty_path, class: 'nav-link nav-link_black'
         %li.nav-item.nav-item_main
-          =link_to 'ГАРАНТИИ', root_path, class: 'nav-link nav-link_black'
+          =link_to 'СОГЛАШЕНИЕ', public_contract_path, class: 'nav-link nav-link_black'
         %li.nav-item.nav-item_main
-          =link_to 'ОТЗЫВЫ О НАС', root_path, class: 'nav-link nav-link_black'
+          =link_to 'ОТЗЫВЫ', comments_path, class: 'nav-link nav-link_black'
         %li.nav-item.nav-item_main
-          =link_to 'КОНТАКТЫ', root_path, class: 'nav-link nav-link_black'
+          =link_to 'КОНТАКТЫ', contacts_path, class: 'nav-link nav-link_black'
 
   = render 'layouts/partials/alerts'
   = yield
