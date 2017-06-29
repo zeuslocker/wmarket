@@ -1,16 +1,13 @@
-# config valid only for current version of Capistrano
-lock "3.8.2"
 
 # Change these
-server '188.225.78.249', roles: [:web, :app, :db], primary: true
+server '188.225.78.249', port: 22, roles: [:web, :app, :db], primary: true
 
-set :rbenv_ruby,      '2.4.0'
 set :repo_url,        'git@gitlab.com:zeuslocker/wmarket.git'
 set :application,     'wmarket'
-set :user,            'root'
+set :user,            'deploy'
 set :puma_threads,    [4, 16]
 set :puma_workers,    0
-
+set :rbenv_ruby, File.read('.ruby-version').strip
 # Don't change these unless you know what you're doing
 set :pty,             true
 set :use_sudo,        false
@@ -25,11 +22,11 @@ set :puma_error_log,  "#{release_path}/log/puma.access.log"
 set :ssh_options,     { forward_agent: true, user: fetch(:user), keys: %w(~/.ssh/id_rsa.pub) }
 set :puma_preload_app, true
 set :puma_worker_timeout, nil
-set :puma_init_active_record, false  # Change to true if using ActiveRecord
+set :puma_init_active_record, true  # Change to false when not using ActiveRecord
 
 ## Defaults:
 # set :scm,           :git
- set :branch,        :deploy3
+# set :branch,        :master
 # set :format,        :pretty
 # set :log_level,     :debug
 # set :keep_releases, 5
@@ -70,17 +67,9 @@ namespace :deploy do
     end
   end
 
-  desc 'Restart application'
-  task :restart do
-    on roles(:app), in: :sequence, wait: 5 do
-      invoke 'puma:restart'
-    end
-  end
-
   before :starting,     :check_revision
   after  :finishing,    :compile_assets
   after  :finishing,    :cleanup
-  after  :finishing,    :restart
 end
 
 # ps aux | grep puma    # Get puma pid

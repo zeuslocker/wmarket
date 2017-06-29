@@ -4,5 +4,5 @@ production:
   encoding: utf8
   pool: 5
   database: wmarket_production
-  username: <%= ENV['wmarket_DATABASE_USER'] %>
-  password: <%= ENV['wmarket_DATABASE_PASSWORD'] %>
+  username: <%= ENV['WMARKET_DATABASE_USER'] %>
+  password: <%= ENV['WMARKET_DATABASE_PASSWORD'] %>
