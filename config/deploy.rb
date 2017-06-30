@@ -1,4 +1,3 @@
-
 # Change these
 server '188.225.78.249', port: 22, roles: [:web, :app, :db], primary: true
 
@@ -67,9 +66,17 @@ namespace :deploy do
     end
   end
 
+  desc 'Restart application'
+  task :restart do
+    on roles(:app), in: :sequence, wait: 5 do
+      invoke 'puma:restart'
+    end
+  end
+
   before :starting,     :check_revision
   after  :finishing,    :compile_assets
   after  :finishing,    :cleanup
+  after  :finishing,    :restart
 end
 
 # ps aux | grep puma    # Get puma pid

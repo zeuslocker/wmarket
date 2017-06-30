@@ -73,6 +73,5 @@ group :development do
   gem 'capistrano-bundler', require: false
   gem 'capistrano3-puma',   require: false
   gem 'web-console', '~> 2.0'
-  gem 'capistrano3-nginx'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
 end
