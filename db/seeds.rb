@@ -5,3 +5,7 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+Admin.create(email: 'admin@admin.com', password: 'Grusha105') unless Admin.find_by(email: 'admin@admin.com')
+Category.find_or_create_by(name: 'World of Tanks')
+Category.find_or_create_by(name: 'Steam')
+Category.find_or_create_by(name: 'Warthunder')
