@@ -23,6 +23,12 @@ set :puma_preload_app, true
 set :puma_worker_timeout, nil
 set :puma_init_active_record, true  # Change to false when not using ActiveRecord
 set :branch, ENV['BRANCH'] if ENV['BRANCH']
+set :default_environment, {
+  'DEVISE_SECRET_KEY' => '',
+  'SECRET_KEY_BASE' => '',
+  'WMARKET_DATABASE_USER' => '',
+  'WMARKET_DATABASE_PASSWORD' => ''
+}
 ## Defaults:
 # set :scm,           :git
 # set :branch,        :master
