@@ -24,7 +24,7 @@ gem 'file_validators'
 gem 'toastr-rails'
 gem 'sprockets', '>=3.0.0.beta'
 gem 'sprockets-es6'
-
+gem 'rack', '2.0.2'
 gem 'sweet-alert', git: 'https://github.com/frank184/sweet-alert-rails'
 gem 'sweet-alert-confirm'
 
