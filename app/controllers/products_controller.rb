@@ -20,7 +20,7 @@ class ProductsController < ApplicationController
 
   def update
     run Product::Update do |result|
-      return redirect_to root_path, notice: I18n.t('product.update')
+      return redirect_to root_path
     end
     render_view :edit
   end

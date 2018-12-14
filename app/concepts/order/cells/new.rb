@@ -11,7 +11,7 @@ module Order::Cell
     end
 
     def main_image
-      model.product.attachments.first.value
+      model.product.avatar
     end
 
     def product_images

@@ -48,10 +48,10 @@
         .thumbslider__wrapper
           .thumbslider__mainimgwrapper
             = image_tag(main_image.url, class: 'thumbslider__mainslide', id: 'zoom_01', 'data-zoom-image': main_image.url)
-          .thumbslider__thhumbs.row.justify-content-center
-            - product_images.each do |image|
-              .col-3.thumbslider__thumcontainer
-                = image_tag(image.url, class: 'thumbslider__thumbitem')
+          -# .thumbslider__thhumbs.row.justify-content-center
+          -#   - product_images.each do |image|
+          -#     .col-3.thumbslider__thumcontainer
+          -#       = image_tag(image.url, class: 'thumbslider__thumbitem')
       .col-sm-6.justify-content-center
         %h3.text-center
           = title
