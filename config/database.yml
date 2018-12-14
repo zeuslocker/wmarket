@@ -6,3 +6,12 @@ production:
   database: wmarket_production
   username: <%= ENV['WMARKET_DATABASE_USER'] %>
   password: <%= ENV['WMARKET_DATABASE_PASSWORD'] %>
+
+development:
+  host: localhost
+  adapter: postgresql
+  encoding: utf8
+  pool: 5
+  database: wmarket_development
+  username: postgres
+  password: postgres
