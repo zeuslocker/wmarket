@@ -1,5 +1,5 @@
 # Change these
-server '188.225.78.249', port: 22, roles: [:web, :app, :db], primary: true
+server '188.225.58.220', port: 22, roles: [:web, :app, :db], primary: true
 
 set :repo_url,        'git@gitlab.com:zeuslocker/wmarket.git'
 set :application,     'wmarket'
@@ -33,7 +33,7 @@ set :branch, ENV['BRANCH'] if ENV['BRANCH']
 
 ## Linked Files & Directories (Default None):
 # set :linked_files, %w{config/database.yml}
-# set :linked_dirs,  %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system}
+ set :linked_dirs,  %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system}
 
 namespace :puma do
   desc 'Create Directories for Puma Pids and Socket'

@@ -7,6 +7,7 @@
     = stylesheet_link_tag    'application', params[:controller], media: 'all'
     = javascript_include_tag 'application', params[:controller], media: 'all'
     = csrf_meta_tags
+    = favicon_link_tag asset_path('favicon.png')
   %body
   %nav{class: 'navbar navbar-toggleable-md navbar-inverse nav-header navbar-light bg-faded'}
     %button.navbar-toggler.navbar-toggler-right{"aria-controls" => "nav-content", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-target" => "#nav-content", "data-toggle" => "collapse", :type => "button"}

@@ -1,4 +1,5 @@
 ru:
+  project_name: 'Wotaccounts'
   product:
     amount: 'Введите количество'
     gram: 'граммов'
