@@ -2,9 +2,10 @@
   Есть вопросы? Напишите нам!
 .row.justify-content-center
   .col-sm-4
-    = image_tag('vk.png', class: 'contacts__icon')
-    %p.text-center
-      Онлайн-поддержка
+    = link_to "https://vk.com/id479924868", :target => "_blank" do
+      = image_tag('vk.png', class: 'contacts__icon')
+      %p.text-center.support-vk
+        Онлайн-поддержка
   .col-sm-4
     = image_tag('mail.png', class: 'contacts__icon')
     %p.text-center
